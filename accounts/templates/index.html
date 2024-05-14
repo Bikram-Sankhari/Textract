@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+  <link href="{% static 'accounts/style.css' %}" rel="stylesheet" />
+  <style>
+    body {
+      margin: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+  </style>
+{% endblock %}
+
+{% block container %}
+  <div class="split-container">
+    <div class="split-left">
+      <a href="{% url 'home' %}" class="home-button"><h1 style="color: white;">Register User</h1></a>
+    </div>
+    <div class="split-right">
+      <a href="{% url 'home' %}" class="home-button"><h1>User Login</h1></a>
+    </div>
+  </div>
+{% endblock %}
