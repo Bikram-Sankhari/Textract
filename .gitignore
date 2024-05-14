@@ -1,0 +1,13 @@
+Textract_accessKeys.csv
+temp.py
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+
+# Environments 
+env
