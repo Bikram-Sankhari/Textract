@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+  <link href="{% static 'customer/upload.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block container %}
+  {% include 'includes/alert.html' %}
+  <div class="container">
+    <h2>Upload Doc</h2>
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="select-option">Accepted Docs for your Country:</label>
+        <select id="select-option" name="doc_name">
+            {% for doc in docs %}
+            <option value="{{doc.name}}">{{doc.name}} - {{doc.sides}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="file-upload">Upload File(s):</label>
+        <input type="file" id="file-upload" name="file" multiple>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

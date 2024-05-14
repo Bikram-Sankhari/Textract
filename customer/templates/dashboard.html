@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+  <link href="{% static 'customer/dashboard.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block container %}
+  {% include 'includes/alert.html' %}
+  <div class="split-container">
+    <div class="split-left">
+      <a href="{% url 'upload' %}" class="home-button"><h1 style="color: white;">Create Customer</h1></a>
+    </div>
+    <div class="split-right">
+      <a href="#" class="home-button"><h1>List Customer</h1></a>
+    </div>
+  </div>
+{% endblock %}

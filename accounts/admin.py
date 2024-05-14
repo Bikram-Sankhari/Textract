@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, Country
+from .models import User, Country, DocumentSet
 from django.contrib.auth.admin import UserAdmin
 
 # Register your models here.
@@ -12,3 +12,4 @@ class UserManager(UserAdmin):
 
 admin.site.register(User, UserManager)
 admin.site.register(Country)
+admin.site.register(DocumentSet)

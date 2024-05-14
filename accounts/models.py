@@ -70,3 +70,18 @@ class User(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return True
+    
+class DocumentSet(models.Model):
+    name = models.CharField(max_length=255)
+    country = models.ManyToManyField(Country)
+    has_backside = models.BooleanField(default=False)
+    OCRLabels = models.JSONField()
+
+    def __str__(self) -> str:
+        return self.name
+    
+    def sides(self):
+        if self.has_backside:
+            return 'Both Side'
+        
+        return 'Front Side'
