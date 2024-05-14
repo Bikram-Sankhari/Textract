@@ -52,7 +52,7 @@ class Country(models.Model):
 class User(AbstractBaseUser):
     name = models.CharField(max_length=255)
     username = models.CharField(max_length=255, unique=True)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True, null=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=True)
     date_joined = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,30 @@
+.dialogue-box {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: -300px; /* Initial position */
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 2;
+    animation: riseAndSink 4s ease-out forwards; /* Adjust the time as per your requirement */
+}
+
+@keyframes riseAndSink {
+    0% {
+        right: -300px;
+        opacity: 0;
+    }
+    25% {
+        right: 20px; /* Adjust as needed */
+        opacity: 1;
+    }
+    75% {
+        right: 20px; /* Adjust as needed */
+        opacity: 1;
+    }
+    100% {
+        right: -300px;
+        opacity: 0;
+    }
+}
